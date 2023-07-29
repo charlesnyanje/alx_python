@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 raise_exception = __import__('4-raise_exception').raise_exception
 
 try:
