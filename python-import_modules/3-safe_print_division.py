@@ -7,4 +7,3 @@ def safe_print_division(a, b):
     finally:
         print("Inside result: {}".format(result))
         return result
-safe_print_division(12, 2)
