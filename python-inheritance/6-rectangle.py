@@ -14,6 +14,6 @@ class Rectangle:
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("{} must be > 0".format(name))
+            raise ValueError("{} must be greater than 0".format(name))
         return value
 s = Rectangle(2, 4)
