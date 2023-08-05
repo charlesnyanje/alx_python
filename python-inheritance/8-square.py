@@ -1,4 +1,8 @@
+"""This class inherits from Rectangle.
+"""
 class Square:
+    """ Square class.
+    """
     def __init__(self, size):
         self.__size = size
     def integer_validator(self, name, value):
