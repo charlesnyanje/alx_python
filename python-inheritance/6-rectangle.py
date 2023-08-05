@@ -1,21 +1,19 @@
-from exports import BaseGeometry
 """This module contains the BaseGeometry class.
 """
-class Rectangle(BaseGeometry):
+class Rectangle:
     """ Rectangle class.
     """
     def __init__(self, width, height):
         """ __init__ method.
         """
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
-    def area(self):
-        """ area method.
+    def integer_validator(self, name, value):
+        """ integer_validator method.
         """
-        return self.__width * self.__height
-    def __str__(self):
-        """ __str__ method.
-        """
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{} must be > 0".format(name))
+        return value
+s = Rectangle(2, 4)
