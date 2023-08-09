@@ -20,7 +20,4 @@ class Base:
 """
 
 b1 = Base()
-b2 = Base()
-b3 = Base()
 
-print(b1.id)
