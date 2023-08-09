@@ -5,8 +5,13 @@ class Base:
         """method init"""""
         if id != None:
             self.id = id
-            self.__nb_objects = __nb_objects
         else:
             __nb_objects += 1
             self.id = __nb_objects
-x = Base()
+"""Instance of Base class"""
+
+b1 = Base()
+b2 = Base()
+b3 = Base()
+
+print(b1.id)
