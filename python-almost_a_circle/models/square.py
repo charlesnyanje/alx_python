@@ -3,12 +3,9 @@
 from models.rectangle import Rectangle
 """class square inherited from Rectangle.
 """
-
-
 class Square(Rectangle):
     """Square class.
     """
-
     def __init__(self, size, x=0, y=0, id=None):
         """init method."""
         super().__init__(size, size, x, y, id)
