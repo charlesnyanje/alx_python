@@ -1,15 +1,15 @@
-"""This class uses the __nb_objects attribute to assign an id to each instance>
+"""This Class implements the base of all other classes in this project.
 """
-
-
 class Base:
     """Base class.
     """
-    def __init__(self,id = None):
-        __nb_objects = 0
-        if id != None:
+    __nb_objects = 0
+    """Private attr instanciation.
+    """
+    def __init__(self, id=None):
+        """init method."""
+        if id is not None:
             self.id = id
         else:
-            __nb_objects += 1
-            self.id = __nb_objects
-            
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
