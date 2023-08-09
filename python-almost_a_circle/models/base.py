@@ -14,12 +14,7 @@ class Base:
         else:
             __nb_objects += 1
             self.id = __nb_objects
-
-
-"""Instance of Base class.
-"""
-
-b1 = Base()
-b1.id = b1.id + 1
+            self.__nb_objects = __nb_objects
+            self.id = self.id + 1
 
 
