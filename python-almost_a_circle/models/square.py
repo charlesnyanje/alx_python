@@ -12,7 +12,8 @@ class Square(Rectangle):
         self.size = size
         self.x = x
         self.y = y
-
+    """area method for square.
+    """
     def area(self):
         return super().area()
 
