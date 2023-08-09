@@ -10,6 +10,6 @@ class Base:
         if id != None:
             self.id = id
         else:
-            self.id = __nb_objects
             __nb_objects += 1
+            self.id = __nb_objects
             
