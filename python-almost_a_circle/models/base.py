@@ -21,5 +21,5 @@ class Base:
 
 b1 = Base()
 b1.id = b1.id + 1
-print(b1.id)
+
 
