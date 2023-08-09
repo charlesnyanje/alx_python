@@ -5,16 +5,11 @@
 class Base:
     """Base class.
     """
-
-    def __init__(self, id=None, __nb_objects=0):
-        """method init.
-        """
+    def __init__(self,id = None):
+        __nb_objects = 0
         if id != None:
             self.id = id
         else:
-            __nb_objects += 1
             self.id = __nb_objects
-            self.__nb_objects = __nb_objects
-            self.id = self.id + 1
-
-
+            __nb_objects += 1
+            
