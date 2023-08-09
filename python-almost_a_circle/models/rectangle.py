@@ -61,12 +61,12 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
         else:
             self.__x = value
-
+            
     @property
     def y(self):
         """y getter."""
         return self.__y
-
+    
     @y.setter
     def y(self, value):
         """y setter."""
