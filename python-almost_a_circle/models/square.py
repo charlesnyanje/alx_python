@@ -7,7 +7,8 @@ class Square(Rectangle):
     """Square class.
     """
     def __init__(self, size, x=0, y=0, id=None):
-        """init method."""
+        """init method.
+        """
         super().__init__(size, size, x, y, id)
         self.size = size
         self.x = x
@@ -16,7 +17,8 @@ class Square(Rectangle):
     """
     def area(self):
         return super().area()
-
+    """str method for square.
+    """
     def __str__(self):
         """str method."""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
