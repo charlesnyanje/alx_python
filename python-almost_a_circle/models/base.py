@@ -5,6 +5,7 @@ class Base:
         """method init"""""
         if id != None:
             self.id = id
+            self.__nb_objects = __nb_objects
         else:
             __nb_objects += 1
             self.id = __nb_objects
