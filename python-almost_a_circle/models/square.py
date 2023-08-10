@@ -1,3 +1,5 @@
+"""importation of modules.
+"""
 from models.rectangle import Rectangle
 """class square inherited from Rectangle.
 """
