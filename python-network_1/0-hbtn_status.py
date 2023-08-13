@@ -1,13 +1,18 @@
-#!/usr/bin/python3
-""" Python script that fetches https://intranet.hbtn.io/status.
-"""
-import  requests
+"""Write a Python script that fetches https://alu-intranet.hbtn.io/status
+
+You must use the package requests
+You are not allow to import packages other than requests."""
+
+import requests
+from requests import Request
+
+url = "https://alu-intranet.hbtn.io/status"
+
+req = Request("GET", url)
 
 if __name__ == "__main__":
-    with requests.urlopen('https://intranet.hbtn.io/status') as response:
-        html = response.read()
-        print("Body response:")
-        print("\t- type: {}".format(type(html)))
-        print("\t- content: {}".format(html))
-        print("\t- utf8 content: {}".format(html.decode('utf-8')))
-
+    """body response.
+    """
+    response = requests.get(url)
+    print(response.text)
+    
