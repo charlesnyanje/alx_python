@@ -1,6 +1,7 @@
 # Project Name - MySQLdb and SQLAlchemy Usage Guide
  <!-- Add your project logo if available -->
 ![Project Logo](images.png)
+
 This README provides a comprehensive guide on how to use MySQLdb and SQLAlchemy for interacting with a MySQL database in Python projects.
 
 ## Table of Contents
