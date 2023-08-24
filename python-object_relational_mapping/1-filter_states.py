@@ -23,7 +23,6 @@ def list_states(username, password, database):
 
         """Execute the SQL query to fetch states.
         """
-        #line < 79 characters
         cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY states.id ASC")        
         """Fetch all rows.
         """
