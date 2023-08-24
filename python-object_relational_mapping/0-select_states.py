@@ -9,14 +9,11 @@ Your code should not be executed when imported."""
 
 import MySQLdb
 
-db = MySQLdb.connect(host="localhost", port=3306, user="root", passwd="Charles@26")
+db = MySQLdb.connect(host="localhost", port=3306, user="root", passwd="Charles@26" db="hbtn_0e_0_usa")
 
 cur = db.cursor()
 
-cur.execute("CREATE DATABASE IF NOT EXISTS hbtn_0e_0_usa")
 cur.execute("USE hbtn_0e_0_usa")
 cur.execute("SELECT * FROM states ORDER BY states.id ASC")
 for row in cur.fetchall():
     print(row)
-cur.close()
-db.close()
