@@ -17,3 +17,4 @@ cur.execute("USE hbtn_0e_0_usa")
 cur.execute("SELECT * FROM states ORDER BY states.id ASC")
 for row in cur.fetchall():
     print(row)
+db.commit()
