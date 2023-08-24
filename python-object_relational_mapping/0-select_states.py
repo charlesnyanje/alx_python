@@ -10,7 +10,7 @@ Your code should not be executed when imported."""
 import MySQLdb
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(user="username", passwd="password", port=3306, host="localhost")
+    db = MySQLdb.connect(user="", passwd="", port=3306, host="localhost")
     cur = db.cursor()
     cur.execute("CREATE DATABASE IF NOT EXISTS hbtn_0e_0_usa")
     cur.execute("USE hbtn_0e_0_usa")
