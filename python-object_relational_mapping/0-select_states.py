@@ -8,9 +8,9 @@ Results must be displayed as they are in the example below
 Your code should not be executed when imported."""
 
 import MySQLdb
+import sys
 
-db = MySQLdb.connect(host="localhost", port=3306, user="root", passwd="Charles@26" db="hbtn_0e_0_usa")
-
+db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1], passwd=sys.argv[2], db="hbtn_0e_0_usa")
 cur = db.cursor()
 
 cur.execute("USE hbtn_0e_0_usa")
