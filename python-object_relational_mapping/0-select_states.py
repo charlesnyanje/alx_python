@@ -8,14 +8,12 @@ Results must be displayed as they are in the example below
 Your code should not be executed when imported."""
 
 import MySQLdb
-
+import sys
 if __name__ == "__main__":
-    """lists all states from the database hbtn_0e_0_usa"""
-    db = MySQLdb.connect(host="localhost", port=3306,
-                         user='root', passwd='pass', db='hbtn_0e_0_usa')
+    db = MySQLdb.connect(user="sys.argv[1]", passwd="sys.argv[2]",
+                         db="sys.argv[3]", port=3306, host="localhost")
     cur = db.cursor()
-    cur.excecute("USE hbtn_0e_0_usa")
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
     rows = cur.fetchall()
     for row in rows:
         print(row)
