@@ -10,10 +10,12 @@ Your code should not be executed when imported."""
 import MySQLdb
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(user="", passwd=" ",
-                         db="hbtn_0e_0_usa", port=3306, host="localhost")
+    db = MySQLdb.connect(user="", passwd=" ", port=3306, host="localhost")
     cur = db.cursor()
+    cur.execute("CREATE DATABASE IF NOT EXISTS hbtn_0e_0_usa")
     cur.execute("USE hbtn_0e_0_usa")
+    cur.execute("CREATE TABLE IF NOT EXISTS states (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(256) NOT NULL, PRIMARY KEY (id))")
+    cur.execute("INSERT INTO states (name) VALUES ('California'), ('Arizona'), ('Texas'), ('Nevada'), ('Oregon')")
     cur.execute("SELECT * FROM states ORDER BY states.id ASC")
     rows = cur.fetchall()
     for row in rows:
