@@ -15,8 +15,6 @@ cur = db.cursor()
 
 cur.execute("CREATE DATABASE IF NOT EXISTS hbtn_0e_0_usa")
 cur.execute("USE hbtn_0e_0_usa")
-cur.execute("CREATE TABLE IF NOT EXISTS states (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(256), PRIMARY KEY (id))")
-cur.execute("INSERT INTO states (name) VALUES ('California'), ('Arizona'), ('Texas'), ('Nevada'), ('Utah'), ('Colorado'), ('New Mexico'), ('Wyoming'), ('Montana'), ('Idaho'), ('Washington'), ('Oregon'), ('North Dakota'), ('South Dakota'), ('Nebraska'), ('Kansas'), ('Oklahoma'), ('Minnesota'), ('Iowa'), ('Missouri'), ('Arkansas'), ('Louisiana'), ('Wisconsin'), ('Illinois'), ('Mississippi'), ('Michigan'), ('Indiana'), ('Kentucky'), ('Tennessee'), ('Alabama'), ('Ohio'), ('West Virginia'), ('Virginia'), ('North Carolina'), ('South Carolina'), ('Georgia'), ('Florida'), ('Pennsylvania'), ('New York'), ('Vermont'), ('New Hampshire'), ('Maine'), ('Massachusetts'), ('Rhode Island'), ('Connecticut'), ('New Jersey'), ('Delaware'), ('Maryland'), ('Alaska'), ('Hawaii')")
 cur.execute("SELECT * FROM states ORDER BY states.id ASC")
 for row in cur.fetchall():
     print(row)
