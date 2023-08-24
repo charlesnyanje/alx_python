@@ -19,8 +19,8 @@ def filter_states(username,password,database):
             db=sys.argv[3]
         )
         cursor = db.cursor()
-        cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' OR 'n%' ORDER BY states.id ASC")
-        
+        cursor.execute("USE hbtn_0e_0_usa")
+        cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC")
         rows = cursor.fetchall()
         for row in rows:
             print(row)
