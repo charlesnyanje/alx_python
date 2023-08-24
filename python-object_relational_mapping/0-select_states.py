@@ -8,29 +8,48 @@ Results must be displayed as they are in the example below
 Your code should not be executed when imported."""
 
 import MySQLdb
+import sys
+
+def list_states(username, password, database):
+    try:
+        # Connect to the MySQL server
+        db = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=username,
+            passwd=password,
+            db=database
+        )
+
+        # Create a cursor to interact with the database
+        cursor = db.cursor()
+
+        # Execute the SQL query to fetch states
+        query = "SELECT * FROM states ORDER BY states.id ASC"
+        cursor.execute(query)
+
+        # Fetch all rows
+        rows = cursor.fetchall()
+
+        # Print the results
+        for row in rows:
+            print(row)
+
+        # Close the cursor and database connection
+        cursor.close()
+        db.close()
+
+    except MySQLdb.Error as e:
+        print("MySQL Error:", e)
+        sys.exit(1)
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(user="", passwd="", port=3306, host="localhost")
-    cur = db.cursor()
-    cur.execute("CREATE DATABASE IF NOT EXISTS hbtn_0e_0_usa")
-    cur.execute("USE hbtn_0e_0_usa")
-    cur.execute("CREATE TABLE IF NOT EXISTS states (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(256) NOT NULL, PRIMARY KEY (id))")
-    #case zero records
-    if cur.execute("SELECT * FROM states ORDER BY states.id ASC") == 0:
-        print("No records")
-    #case of two records
-    if cur.execute("SELECT * FROM states ORDER BY states.id ASC") == 2:
-        cur.execute("INSERT INTO states (name) VALUES ('California'), ('Arizona')")
-    #case of 1000000 records
-    if cur.execute("SELECT * FROM states ORDER BY states.id ASC") == 1000000:
-        for i in range(1000000):
-            cur.execute("INSERT INTO states (name) VALUES ('California')")
-    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
-    for row in cur.fetchall():
-        print(row)
-    cur.close()
-    db.close()
+    if len(sys.argv) != 4:
+        print("Usage: python script.py <username> <password> <database>")
+    else:
+        username = sys.argv[1]
+        password = sys.argv[2]
+        database = sys.argv[3]
+        list_states(username, password, database)
+
     
-    
-    
-        
