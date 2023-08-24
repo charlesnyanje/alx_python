@@ -23,8 +23,7 @@ def list_states(username, password, database):
 
         """Execute the SQL query to fetch states.
         """
-        r = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC"
-        cur.execute(r)
+        cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC")
         """Fetch all rows.
         """
         rows = cur.fetchall()
