@@ -10,32 +10,38 @@ Your code should not be executed when imported."""
 import MySQLdb
 import sys
 
+
 def list_states(username, password, database):
     try:
-        # Connect to the MySQL server
+        """Connect to the MySQL server.
+        """
         db = MySQLdb.connect(
             host="localhost",
             port=3306,
-            user=username,
-            passwd=password,
-            db=database
+            user="sys.argv[1]",
+            passwd="sys.argv[2]",
+            db="sys.argv[3]"
         )
 
-        # Create a cursor to interact with the database
+        """Create a cursor to interact with the database.
+        """
         cursor = db.cursor()
 
-        # Execute the SQL query to fetch states
-        query = "SELECT * FROM states ORDER BY states.id ASC"
-        cursor.execute(query)
+        """Execute the SQL query to fetch states.
+        """
+        cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
 
-        # Fetch all rows
+        """Fetch all rows.
+        """
         rows = cursor.fetchall()
 
-        # Print the results
+        """Print the results.
+        """
         for row in rows:
             print(row)
 
-        # Close the cursor and database connection
+        """Close the cursor and database connection.
+        """
         cursor.close()
         db.close()
 
@@ -43,13 +49,6 @@ def list_states(username, password, database):
         print("MySQL Error:", e)
         sys.exit(1)
 
-if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: python script.py <username> <password> <database>")
-    else:
-        username = sys.argv[1]
-        password = sys.argv[2]
-        database = sys.argv[3]
-        list_states(username, password, database)
 
-    
+if __name__ == "__main__":
+    list_states(sys.argv[1], sys.argv[2], sys.argv[3])
