@@ -11,10 +11,11 @@ def filter_statesby_input(username,password,database,search):
             user=sys.argv[1],
             passwd=sys.argv[2],
             db=sys.argv[3]
+            search=sys.argv[4]
         )
         
         cur = db.cursor()
-        cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY states.id ASC".format(search))
+        cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY states.id ASC".format(sys.argv[4]))
         rows = cur.fetchall()
         for row in rows:
             print(row)
