@@ -10,9 +10,9 @@ app = Flask(__name__)
 """routes definition.
 """
 
-@app.route("/")
+@app.route("/",strict_slashes = False)
 def home():
     return "<p>Hello HBNB!</P>"
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host="0.0.0.0",port="5000")
