@@ -18,9 +18,9 @@ def home():
 def hbnb():
     return "HBNB"
 
-@app.route("/c/<title>", strict_slashes = False)
-def c(title):
-    return "C"
+@app.route("/c/<text>", strict_slashes = False)
+def c(text):
+    return text
 
 if __name__ == "__main__":
     app.run(debug=True,host="0.0.0.0",port="5000")
