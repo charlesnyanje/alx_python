@@ -31,7 +31,6 @@ def python(text):
     return f"Python {text}".replace("_", " ")
 
 
-@app.route('/number/')
 @app.route('/number/<int:n>/')
 def convertersexample(n=1):
 	try:    
