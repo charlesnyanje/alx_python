@@ -32,7 +32,7 @@ def python(text):
 
 
 @app.route('/number/<int:n>/')
-def convertersexample(n=1):
+def number(n=1):
 	try:    
 		return render_template(f"{n} is a number", n=n)
 	except Exception as e:
