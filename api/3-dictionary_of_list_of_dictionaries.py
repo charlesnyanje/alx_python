@@ -1,5 +1,6 @@
-import requests
 import json
+import requests
+
 
 def get_todo_data():
     # Define the base URL for the API
