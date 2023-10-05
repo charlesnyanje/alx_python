@@ -1,3 +1,5 @@
+"""Module importation.
+"""
 import requests
 import sys
 

@@ -1,3 +1,5 @@
+"""Module importation.
+"""
 import json
 import requests
 
