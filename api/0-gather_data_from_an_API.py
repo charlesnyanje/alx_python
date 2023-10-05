@@ -3,6 +3,7 @@
 import requests
 import sys
 
+
 def get_employee_todo_progress(employee_id):
     # Define the API endpoints
     base_url = "https://jsonplaceholder.typicode.com"
@@ -24,13 +25,15 @@ def get_employee_todo_progress(employee_id):
         done_tasks = sum(1 for todo in todos_data if todo["completed"])
 
         # Print output
-        print(f"Employee {employee_name} is done with tasks ({done_tasks}/{total_tasks}):")
+        print(
+            f"Employee {employee_name} is done with tasks ({done_tasks}/{total_tasks}):")
         for todo in todos_data:
             if todo["completed"]:
                 print(f"\t{todo['title']}")
 
     except requests.RequestException as e:
         print(f"Error fetching data: {e}")
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -42,4 +45,3 @@ if __name__ == "__main__":
         get_employee_todo_progress(employee_id)
     except ValueError:
         print("Error: Employee ID must be an integer.")
-
