@@ -7,7 +7,7 @@ import sys
 def get_employee_todo_progress(employee_id):
     # Define the API endpoints
     base_url = "https://jsonplaceholder.typicode.com"
-    user_endpoint = f"{base_url}/users/{employee_id}"
+    user_endpoint = ("{}/users/{}".format(base_url, employee_id))
     todos_endpoint = f"{base_url}/users/{employee_id}/todos"
 
     try:
